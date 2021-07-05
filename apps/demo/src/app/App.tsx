@@ -17,11 +17,20 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
-
 import Animated, {
   AnimatedLayout,
+  runOnUI,
   SlideInRight,
 } from 'react-native-reanimated';
+
+function someWorklet(greeting) {
+  'worklet';
+  console.log(greeting, 'From the UI thread');
+}
+
+function onPress() {
+  runOnUI(someWorklet)('Howdy');
+}
 
 const App = () => {
   return (
@@ -35,7 +44,7 @@ const App = () => {
           <AnimatedLayout style={{ flex: 1 }}>
             <Animated.View style={styles.header} entering={SlideInRight}>
               <Image style={styles.logo} source={require('./logo.png')} />
-              <Text style={styles.heading} testID="heading">
+              <Text style={styles.heading} testID="heading" onPress={onPress}>
                 Welcome to Demo
               </Text>
             </Animated.View>

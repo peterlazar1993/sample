@@ -17,6 +17,20 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
+import Animated, {
+  AnimatedLayout,
+  runOnUI,
+  SlideInRight,
+} from 'react-native-reanimated';
+
+function someWorklet(greeting) {
+  'worklet';
+  console.log(greeting, 'From the UI thread');
+}
+
+function onPress() {
+  runOnUI(someWorklet)('Howdy');
+}
 
 const App = () => {
   return (
@@ -27,12 +41,14 @@ const App = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}
         >
-          <View style={styles.header}>
-            <Image style={styles.logo} source={require('./logo.png')} />
-            <Text style={styles.heading} testID="heading">
-              Welcome to DemoTest
-            </Text>
-          </View>
+          <AnimatedLayout style={{ flex: 1 }}>
+            <Animated.View style={styles.header} entering={SlideInRight}>
+              <Image style={styles.logo} source={require('./logo.png')} />
+              <Text style={styles.heading} testID="heading" onPress={onPress}>
+                Welcome to DemoTest
+              </Text>
+            </Animated.View>
+          </AnimatedLayout>
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>

@@ -1,0 +1,15 @@
+export declare const nxVersion = "*";
+export declare const reactVersion = "17.0.2";
+export declare const typesReactVersion = "17.0.6";
+export declare const reactNativeVersion = "0.65.0-rc.2";
+export declare const typesReactNativeVersion = "0.64.10";
+export declare const metroVersion = "0.66.0";
+export declare const reactNativeCommunityCli = "6.0.0-rc.0";
+export declare const reactNativeCommunityCliIos = "6.0.0-rc.0";
+export declare const reactNativeCommunityCliAndroid = "6.0.0-rc.0";
+export declare const metroReactNativeBabelPresetVersion = "0.66.0";
+export declare const testingLibraryReactNativeVersion = "8.0.0-rc.0";
+export declare const testingLibraryJestNativeVersion = "4.0.1";
+export declare const jestReactNativeVersion = "18.0.0";
+export declare const reactTestRendererVersion = "17.0.2";
+export declare const reactNativeCodegenVersion = "0.0.7";

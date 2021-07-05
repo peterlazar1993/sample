@@ -96,3 +96,4 @@ buck-out/
 node_modules/
 
 apps/demo-e2e/artifacts
+apps/demo-test-e2e/artifacts

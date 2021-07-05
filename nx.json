@@ -30,6 +30,10 @@
     "demo": {
       "tags": []
     },
-    "demo-e2e": {}
+    "demo-e2e": {},
+    "demo-test": {
+      "tags": []
+    },
+    "demo-test-e2e": {}
   }
 }
